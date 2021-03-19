@@ -341,8 +341,18 @@
     - `arr.length` : 行を基準としたこの配列の長さ
     - `arr[0].length` : 0行の列の長さ
 
-
-
+    ### ArrayListクラス
+    - 既存の配列は長さを決めて宣言してから使うので足りない場合他の配列に複製したり面倒になる
+    - ArrayListクラスはJavaから提供されるオブジェクト配列が実装されたクラスである
+    - 色んなメソッドと属性を使用しオブジェクト型配列を便利に管理できる
+    - ArrayListではindex演算子を提供しない
+    - よく使われているArrayListのメソッド
+      - `add(Type name) : boolean` : 要素一個を配列に追加
+      - `size() : int` : 要素の全体個数を返す
+      - `get(int index)` : 配列のidexの位置にある要素の値を返す
+      - `remove(int index)` : 配列のidexの位置にある要素の値を消してその値を返す
+      - `isEmpty()` : 配列の空きを確認する
+      - ....
 
   ### ETC
   - `%s` : string, `%n` : line alignment
