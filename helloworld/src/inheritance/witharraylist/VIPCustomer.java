@@ -20,6 +20,11 @@ public class VIPCustomer extends Customer {
         return price - (int) (price * saleRatio);
     }
 
+    @Override
+    public String showCustomerInfo() {
+        return super.showCustomerInfo() + "担当相談員IDは" + agentID + "です。";
+    }
+
     public int getAgentId() {
         return agentID;
     }
