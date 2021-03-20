@@ -354,5 +354,19 @@
       - `isEmpty()` : 配列の空きを確認する
       - ....
 
+  ## 継承と大形成
+    ### 継承(inheritance:상속)
+    - クラスを定義するとき既に実現されているクラスを継承されて属性や機能が拡張されるクラスを実現する
+    - 継承するクラス：上位クラス,parent class, base class, super class
+    - 継承されるクラス：下位クラス, child class, derived class, sub class
+    - `class B extends A {}`
+    - 上位クラスは下位クラスより一般的な意味を持つ(general)
+    - 下位クラスは上位クラスより具体的な意味を持つ(specific)
+    - extendsの後ろには単一のクラスだけ使用できる
+    - Javaはsingle inheritanceだけを支援する。
+    - is - a, has - a
+    - private < default < protected < public
+    - 接近制御子protectedは継承関係ならクラスが違っても使える
+
   ### ETC
   - `%s` : string, `%n` : line alignment

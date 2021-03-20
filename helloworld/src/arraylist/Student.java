@@ -26,9 +26,10 @@ public class Student {
         int total = 0;
         for (Subject subject : subjects) {
             int score = subject.getScore();
-            System.out.printf("学生%s様の%s科目の成績は%dです%n", studentName ,subject.getName(), score);
+            System.out.printf("学生%s様の%s科目の成績は%dです%n", studentName, subject.getName(), score);
             total += score;
         }
+        System.out.printf("学生%s様の総点は%d点です%n", studentName, total);
     }
 
 }
