@@ -354,19 +354,35 @@
       - `isEmpty()` : 配列の空きを確認する
       - ....
 
-  ## 継承と大形成
-    ### 継承(inheritance:상속)
-    - クラスを定義するとき既に実現されているクラスを継承されて属性や機能が拡張されるクラスを実現する
-    - 継承するクラス：上位クラス,parent class, base class, super class
-    - 継承されるクラス：下位クラス, child class, derived class, sub class
-    - `class B extends A {}`
-    - 上位クラスは下位クラスより一般的な意味を持つ(general)
-    - 下位クラスは上位クラスより具体的な意味を持つ(specific)
-    - extendsの後ろには単一のクラスだけ使用できる
-    - Javaはsingle inheritanceだけを支援する。
-    - is - a, has - a
-    - private < default < protected < public
-    - 接近制御子protectedは継承関係ならクラスが違っても使える
+  ## 継承と多形成
+  ### 継承(inheritance:상속)
+  - クラスを定義するとき既に実現されているクラスを継承されて属性や機能が拡張されるクラスを実現する
+  - 継承するクラス：上位クラス,parent class, base class, super class
+  - 継承されるクラス：下位クラス, child class, derived class, sub class
+  - `class B extends A {}`
+  - 上位クラスは下位クラスより一般的な意味を持つ(general)
+  - 下位クラスは上位クラスより具体的な意味を持つ(specific)
+  - extendsの後ろには単一のクラスだけ使用できる
+  - Javaはsingle inheritanceだけを支援する。
+  - is - a, has - a
+  - private < default < protected < public
+  - 接近制御子protectedは継承関係ならクラスが違っても使える
+  - 下位クラスが生成されるとき上位クラスが先に生成される。`super()`
+  - `super()` 自分のすぐ上の上位クラスを指す
+  - 継承している上位クラスが先に生成されるので上位クラスのメンバー変数がメモリ上に存在する→だから下位クラスから使える
+  - Upcasting: 上位クラス型で変数を宣言しておいて下位クラスインスタンスを生成する事が出来る。
+  ### Method Overriding
+  - 上位クラスで定義されたメソッドの中下位クラスと機能が合わないとか追加機能が欲しい場合同じ名前とパーらメータで下位クラスで再定義する。
+    ### 仮想メソッド(virtual method)
+    - プログラムであるオブジェクトの変数やメソッドの参照はそのタイプにより成り立つ。
+    - 仮想メソッドの場合タイプとは関係なく実際に生成されたインスタンスのメソッドが呼び出される。
+    - overridingされているメソッドがある場合動く
+    ### 多形成(polymorphism)
+    - 一つのコードがいくつかの資料型に実現されて実行される事。
+    - 情報隠匿、継承とともにオブジェクト指向プログラミングの１番の特徴の一つである。
+    - オブジェクト指向プログラミングの柔軟性、リサイクル性、維持補修性に基本となる特徴である。
+
+
 
   ### ETC
   - `%s` : string, `%n` : line alignment

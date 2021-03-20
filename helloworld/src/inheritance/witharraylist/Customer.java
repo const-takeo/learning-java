@@ -1,4 +1,4 @@
-package inheritance;
+package inheritance.witharraylist;
 
 public class Customer {
     protected int customerID;
