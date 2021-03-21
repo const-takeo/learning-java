@@ -12,6 +12,10 @@ class Human extends Animal {
     public void move() {
         System.out.println("人間が動き出します。");
     }
+
+    public void talk() {
+        System.out.println("話します");
+    }
 }
 
 class Tiger extends Animal {
@@ -38,5 +42,11 @@ public class AnimalTest {
 
     public void moveAnimal(Animal animal) {
         animal.move();
+
+        if (animal instanceof Human) {
+            // downcasting
+            Human human = (Human) animal;
+            human.talk();
+        }
     }
 }
