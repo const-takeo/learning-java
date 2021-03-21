@@ -402,6 +402,7 @@
   - `abstract int add(int x, int y);` 宣言だけある抽象メソッド
   - `abstract`予約語使用
   - 抽象クラスはインスタンス化できない(`concrete class`)
+  - 継承するために使う
 
   ### ETC
   - `%s` : string, `%n` : line alignment
