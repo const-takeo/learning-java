@@ -421,6 +421,9 @@
   - interfaceの中に宣言されたメンバー変数は基本public static finalが自動的に付く　→　定数(constant)
   - Type-implements(type継承)と呼ばれる (interface - implements), 具体化継承(class - extends)
   - interfaceは具体化コードがないため一期に沢山implements出来る
+  - default method: 基本具体化を持っているメソッド,具体化クラスで再定義できる
+  - static method: インスタンスの生成とは関係なくinterfaceタイプで使用できるメソッド
+  - pricate method: interfaceを具体化したクラスで使用したり再定義出来ない,interface内部で機能を提供する為に具体化するメソッド。
     ### interfaceと多形成
     - interfaceは"Client cod"とサービスを提供するオブジェクト間の約束である。
     - どんなオブジェクトがどんなinterfaceタイプである事はそのinterfaceが提供するメソッドを具体化させたという意味です。
