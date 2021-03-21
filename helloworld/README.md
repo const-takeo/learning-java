@@ -415,6 +415,18 @@
     - final methodは下位クラスで再定義(overriding)出来ない
     - finalクラスはこの上もっと継承されない ex) javaのStringクラス
     
+  ## JavaでのInterface
+  - 具体化コードがない全てのメソッドが抽象メソッドで成り立つメソッドの集まりクラス
+  - interfaceの中に宣言されたメソッドたちは基本public abstractに自動設定されている →　抽象メソッド
+  - interfaceの中に宣言されたメンバー変数は基本public static finalが自動的に付く　→　定数(constant)
+  - Type-implements(type継承)と呼ばれる (interface - implements), 具体化継承(class - extends)
+  - interfaceは具体化コードがないため一期に沢山implements出来る
+    ### interfaceと多形成
+    - interfaceは"Client cod"とサービスを提供するオブジェクト間の約束である。
+    - どんなオブジェクトがどんなinterfaceタイプである事はそのinterfaceが提供するメソッドを具体化させたという意味です。
+    - Clientはいどういう風に具体化されたのか関係なくinterfaceの定義だけを見て使用できる。(ex:JDBC)
+    - 色んな具体化が必要なinterfaceを設計するに当たってとっても重要な事です
+
 
   ### ETC
   - `%s` : string, `%n` : line alignment
