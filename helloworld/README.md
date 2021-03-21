@@ -403,6 +403,18 @@
   - `abstract`予約語使用
   - 抽象クラスはインスタンス化できない(`concrete class`)
   - 継承するために使う
+    ### Template method
+    - 抽象クラスや具体化されたメソッドを活用して全体機能の流れを定義するメソッド
+    - finalで宣言すると下位クラスで再定義できない。
+    - フレームワークでよく使われる設計パターン
+    - 抽象クラスで宣言された上位クラスにTemplate Methodを活用して全体的な流れを定義し
+      下位クラスで異なるように具体化すべき部分は抽象クラスで宣言し下位クラスが具体化するようにする。
+    ### final
+    - final変数は値が変更されない定数(constant)である:`public static final double PI = 3.14;`
+    - final変数は専ら一回だけ値をassign出来る
+    - final methodは下位クラスで再定義(overriding)出来ない
+    - finalクラスはこの上もっと継承されない ex) javaのStringクラス
+    
 
   ### ETC
   - `%s` : string, `%n` : line alignment
