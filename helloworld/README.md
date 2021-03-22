@@ -433,5 +433,102 @@
     ### interface継承
     - interface間にも継承が可能
     - 具体化コードの軽症ではないので型継承(type-inheritance)と呼ぶ
+  ##  基本クラス
+  - java内装の基本的のクラス
+  - `java.lang` package
+    - プログラミング時importしなくても自動的にimportされる。
+    - import java.lang.*;　文が追加される。
+    - 多く使われる基本クラスたちが属されているpackage
+    - `String, Integer, System等等`
+    ### Object Class
+    - 全てのクラスの最上位クラス
+    - `java.lang.Object`クラス
+    - 全てのクラスはObjectクラスから継承される
+    - 全てのクラスはObjectクラスのメソッドを使える
+    - 全てのクラスはObjectクラスのメソッドの中一部は再定義(overriding)出来る(finalになっているのはダメ)
+    - Compilerが自動的にextends Objectを追加する
+    ### Method
+    - `toString()`
+      - オブジェクトの情報をStringに変えて使用する時よく使われる。
+      - StringやIntegerクラスには既にOverridingされている
+      - Stringは文字列を返す
+      - Integerは整数値を返す
+    - `equals()`
+      - 二つのインスタンスの住所値を比較して`true/false`を返す
+      - 再定義し二つのインスタンスが論理的に一緒なのかを判断し返す →　二つのインスタンスの値が違っても論理的に一緒なのかを判断する
+    - `hashCode()`
+      - hash: 情報を保存、検索する為に使用する資料構造
+      - 資料の特定値(key値)に対して保存位置を返すhash関数を使う
+      - hash関数はどういう情報なのかによって違ってくる
+      - hashCode()メソッドはインスタンスの保存アドレスを返す
+      - heapメモリにインスタンスが保存される方式がhash
+      - hashCode()の返還値：JVMが保存したインスタンスのアドレス値を10進数に表す。
+      - お互い違うメモリのインスタンスが一緒だと？
+        - 再定義されたequals()メソッドの値がtrue
+        - 同じhashCode()返還値を持つべき
+      - 論理的な同一製のためequals()メソッドを再定義したらhashCode()メソッドも再定義して同一の値が帰ってくるようにする
+    - `clone()`
+      - オブジェクトの原本を複製するのに使用するメソッド
+      - 原本をおいといて複製本を使う時
+      - 基本枠(prototype)をおいて複雑な生成過程を繰り返さずに複製
+      - cloneable interfaceをimplementsしてから使用
+    ### String Class
+    - Stringを宣言する二つの方法
+      - `String str1 = new String("abc");` : heapメモリに生成される
+      - `String str2 = "test";` : constant poo領域に生成される
+    - StringClassで文字列連結
+      - 一度生成されたString値(文字列)は不変(immutable)
+      - 二つの文字列を連結すると新しいインスタンスが生成される
+      - 文字列連結を沢山やるとメモリにgarbageが沢山できる恐れがある。-> StringBuilder, StringBufferを使用
+    - StringBuilder, StringBuffer
+      - 内部的に可変的なchar[]配列を持っているクラス
+      - 文字列を頻繁に繋ぐとか変更する時使うといい
+      - 毎度新しく生成しずに既存の配列を変更して使うのでgarabageが出でこない
+      - StringBufferはmulti threadプログラミングで同期化(synchronization)を保障する
+      - 単一threadを使うプログラムではStringBufferを使うのをお勧め  
+      - toString()メソッドでStringに返還
+    ### Class Class
+    - javaの全てのクラスとinterfaceはcompile後classファイルに生成される。
+    - classファイルにはオブジェクトの情報(member variable, method, constructor...)が含まれている
+    - Class classはcompileされたclassファイルからオブジェクトの情報を持ってくる事ができる。
+    - `dynamic loading`
+      - compile時データタイプが全てbindingされて資料型がLoadingされる事(static loading)ではなくて実行中にデータタイプをしりbindingされる方式
+      - プログラミング時にはどういうクラスを使用するか分からない時変数で処理しておいて実行する時その変数に代入された値のクラスが実行されるようにClassクラスから提供するstatic method
+      - 実行時にLoadingされるので場合により他のクラスが使用できるので有用
+      - Compile Timeにチェックできないので該当文字列に対するクラスがない場合例外処理が起こり得る(ClassNotFoundException)
+      - ```
+          Class pClass3 = Class.forName("classclass.Person");
+              System.out.println(pClass3.getName());
+        ```
+    - `static loading`
+    - ```
+        Class pClass2 = Person.class;
+        System.out.println(pClass2.getName());
+      ```
+    - reflection programming
+      - Classクラスを利用してクラスの情報(constructor,method,variables....)を持ってきてこれを活用してインスタンスを生成してメソッドを呼び出す等のプログラミング方式
+    - ロカルメモリにオブジェクトがなくてオブジェクトのタイプを直接分からない場合、オブジェクトの情報だけを利用してプログラミングできる
+    - Constructor, Method, Field等java.lang.reflectパッケージにあるクラスたちを活用してプログラミング
+    - 一般的に資料型(type)をわかる時は使用しない。
+
+  ## Collection FrameWork
+  - ### Generic Programming
+    - 変数の宣言やメソッドのパラメーターを一つの参照資料型ではなく色んな資料型を返せるようにプログラミングする方式
+    - 実際に使用される参照資料型への返還はcompilerが検証するので安定的な方式
+    - Collection FrameWorkでよく使われている
+    ### 資料型パラメータ変数 T
+    - typeの意味でTをよく使う
+    - `<T>`で`<>`はダイヤモンド演算子と呼ぶ
+    - static keywordにはTに使えない
+    - genericで資料型推論(java10から)
+      `ArrayList<String> list = new ArrayList<String>();`
+                    &darr;
+      `var list = new ArrayList<String>();`
+    - Genericに資料型を明示しなかった場合Objectにみなす
+    - `T extends class` : Tが使用されるクラスを制限するために使用.
+    ### Generic Method
+    - Generic Classではなくても作れる
+    - `public class GenericMethod{public static<T,V> double makeRectangle(Point<T,V> p1, Point<T,V> p2){}}`
+
   ### ETC
   - `%s` : string, `%n` : line alignment
