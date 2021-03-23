@@ -516,6 +516,15 @@
     - 一般的に資料型(type)をわかる時は使用しない。
 
   ## Collection FrameWork
+  - プログラムの実装に必要な資料構造(Data Structure)を具体化しておいたライブラリ
+  - java.utilパッケージに具体化されている
+  - `Collection` - 単一オブジェクトを管理, 
+    - `List` 線形的資料型,順番がある,重複オッケー,配列の機能を具体化するためのinterface
+    - `Set` 集合、重複要素がない,Hash構造 ex) id, 車番号...
+  - `Map` - `T-Value pair`쌍으로된 객체를 관리:対オブジェクトを管理,key重複不可
+    - `HashMap`
+    - `TreeMap`
+    - `Properties`
   - ### Generic Programming
     - 変数の宣言やメソッドのパラメーターを一つの参照資料型ではなく色んな資料型を返せるようにプログラミングする方式
     - 実際に使用される参照資料型への返還はcompilerが検証するので安定的な方式
@@ -562,6 +571,9 @@
     ### Hashing
     - 平均時間複雑度 = 資料がN個の時 O(1)
     - `index = hash(key)`
+    ### Thread
+    - 一つのprocessは必ず一つ以上のthread持つ
+    - 
     
   ### ETC
   - `%s` : string, `%n` : line alignment
