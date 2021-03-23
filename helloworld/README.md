@@ -306,14 +306,18 @@
   - androidでも使われている
 
   ## 配列と ArrayList
+  - Arrayとは
+    - 同じ型のデータタイプをメモリに保存する線形的(一列みたい)資料構造
+    - 論理的構造と物理的構造が同一
+    - index演算が速い
   - 基本資料型配列
   - 整数２０個を利用するプルグラムを作るとき整数タイプの変数を２０個宣言しなければならない。
   - 非効率的で変数管理も難しい。
   - 配列を使うと同一の資料型の変数を一期に順次的で管理できる。
   - 配列はFixed lengthで始まる→作る時lengthを指定するから。
-  - 連続する資料型中間が抜いちゃ駄目
+  - 連続する資料型中間が抜いちゃ駄目(O(n))
   - type[] arrayName = new type[length] -> `int[] arr = new int[10]`
-  - type arrayNamep[] = new type[length] -> `int arr[] = new int[10]`
+  - type arrayName[] = new type[length] -> `int arr[] = new int[10]`
   - 配列の初期化 宣言と同時に初期化できる。　→　配列を初期化するときは配列の長さを明示しない。
   - `int[] studentIds = new int[] {101, 102, 103}`
   - 初期化しなかった場合 int 0, double 0.0, オブジェクト配列は nullになる。
@@ -529,6 +533,35 @@
     ### Generic Method
     - Generic Classではなくても作れる
     - `public class GenericMethod{public static<T,V> double makeRectangle(Point<T,V> p1, Point<T,V> p2){}}`
-
+    ### LinkedList
+    - blockchainからhashが抜いた感じ
+    - 配列の短所がない
+    - insert/deleteにかかるコストが少ない
+    - 物理的位置/論理的位置異なる
+    ### Stack
+    - 重なる
+    - LIFO(Last In First Out)
+    - 一番上、後ろ -> TOP
+    - push(), pop()
+    - remove(n-1)
+    - 線形的
+    - peek() : stackから削除しない、参照のみ
+    ### Queue
+    - 前：front <- 前から取り出す deque
+    - 後：rear <- 後ろから入れる  enque
+    - FIFO(First In First Out)
+    - remove(0)
+    ### Tree
+    - binary tree(２進tree)
+    - left child < parent
+    - right child > parent
+    - 重複だめ
+    - search速度log2n
+    - JavaはRedblack Tree
+    - in-order(left - 私 - right) -> ascending sort(오름차순)
+    ### Hashing
+    - 平均時間複雑度 = 資料がN個の時 O(1)
+    - `index = hash(key)`
+    
   ### ETC
   - `%s` : string, `%n` : line alignment
