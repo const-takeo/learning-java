@@ -654,8 +654,37 @@
         - lambda式を宣言する為のinterface
         - 匿名関数とparameterだけで構成されるので単一のメソッドだけ持ってる
         - interfaceに宣言する時@FunctionalInterfaceを付ける、一つだけ宣言できる
-    
-  
+  ## stream
+  - Arrays.stream()
+
+  ## exceptions
+  - compile error: コード作成中発生する文法的エラー
+  - runtime error: 実行中のプログラムが意図してない動きをしたりプログラムが止まるエラー
+  - errorとexception class
+    - error : system error: 仮想マシンから発生、プログラマーが処理できない、動的メモリが無い場合、stack over flow等
+    - 例外(exception) : プログラムで制御できるエラー
+    - Throwable <--- Error
+                  |
+                  -- Exception
+    - ### 例外クラスの種類
+      - 全ての例外クラスの最上位クラスはException
+      - いろんな例外クラスが提供される
+      - Exception <---- IOException - FileNotFoundException
+                      |              |
+                      |              - SocketException
+                      |
+                      - RunTimeException - ArithmeticException
+                                         |
+                                         - IndexOutofBoundException
+                                         ....
+                                         ...
+                                         ..
+                                         .
+                                         等等
+    - `throws` : 例外を後にする事
+                                         
+  ## JAVA Input/Output
+
   ### ETC
   - `%s` : string, `%n` : line alignment
   - Runnable interface : threadを生成する時使う
