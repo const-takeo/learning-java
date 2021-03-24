@@ -608,6 +608,54 @@
       - keyに使用されるクラスに`Comparable`,`Comparator`interfaceを具体化
       - javaにたくさんのクラス達は既にComparableで具体化されている
       - 具体化されたクラスをkeyで使う場合具体化する必要なし
+
+    ### Inner Class
+    - Instance inner class
+      - 外部クラスメンバー変数と同一
+      - 使用出来る外部クラス変数：外部インスタンス変数、外部全域変数 -> static 使用不可
+      - privateのinclassを呼び出す方法
+      - ```
+          OutClass outClass = new OutClass();
+          OutClass.InClass inClass = outClass.new InClass(); 
+          inClass.inTest();
+        ```
+        -> 一般的にはmethodもprivateでして使う
+
+    - Static inner class
+      - 外部クラスメンバー変数と同一
+      - 使用出来る外部クラス変数：外部全域変数
+    - Local inner class
+      - メソッド内部に具体化
+      - 使用出来る外部クラス変数：外部インスタンス変数、外部全域変数
+    - Annominus inner class
+      - メソッド内部に具体化,変数に代入して直接具体化
+      - 使用出来る外部クラス変数：外部インスタンス変数、外部全域変数
+
+      ### Lambda expression
+      - Javaで関数型プログラミングを具体化する方式
+      - Java8から導入
+      - クラスを生成しずに関数の呼び出しだけで機能を実行
+      - #### lambda式を作る方法
+        - 匿名の関数を作る
+        - パラメーターとパラメーターを活用した実行文で具体化 :`(parameter) -> {excecution;}`
+        - ```
+            int add(int x, int y){return x + y;}
+          ```
+        - ```
+            (int x, int y) -> {return x + y;}
+          ```
+        - 関数名、return typeをなくして &rarr;を使用
+        - { }までが実行文を意味
+        - parameterが一つしか無い時は()を省略出来る: `str -> {System.out.println(str);}`
+        - curly basket中の実行文が一つの場合省略できる: `str -> System.out.println(str);`
+        - curly basket中の実行文が一つだとしてもreturn文は省略不可: `str -> {return str.length();}`
+        - curly basket中の実行文がreturn文だけなら省略できる: `str -> str.length();`, `(x,y) -> x + y;`
+      - #### 関数型 interface
+        - lambda式を宣言する為のinterface
+        - 匿名関数とparameterだけで構成されるので単一のメソッドだけ持ってる
+        - interfaceに宣言する時@FunctionalInterfaceを付ける、一つだけ宣言できる
     
+  
   ### ETC
   - `%s` : string, `%n` : line alignment
+  - Runnable interface : threadを生成する時使う
