@@ -31,4 +31,21 @@ public class Member {
     public String toString() {
         return memberName + "様の会員IDは" + +memberId + "です。";
     }
+
+    @Override
+    public int hashCode() {
+        return memberId;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj instanceof Member) {
+            Member member = (Member) obj;
+            if (member.memberId == this.memberId) {
+                return true;
+            }
+            return false;
+        }
+        return false;
+    }
 }

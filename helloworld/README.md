@@ -520,7 +520,7 @@
   - java.utilパッケージに具体化されている
   - `Collection` - 単一オブジェクトを管理, 
     - `List` 線形的資料型,順番がある,重複オッケー,配列の機能を具体化するためのinterface
-    - `Set` 集合、重複要素がない,Hash構造 ex) id, 車番号...
+    - `Set` 集合、重複要素がない-> (具体化されてない物→直接作ったクラスなど)該当のクラスに直接Overridingしなければならない,Hash構造 ex) id, 車番号..., 順番がない
   - `Map` - `T-Value pair`쌍으로된 객체를 관리:対オブジェクトを管理,key重複不可
     - `HashMap`
     - `TreeMap`
@@ -574,6 +574,11 @@
     ### Thread
     - 一つのprocessは必ず一つ以上のthread持つ
     - 
+    ### Iterator
+    - collectionの개체를巡回するinterface
+    - `Iterator ir = memberArrayList.iterator();`
+    - `boolean hashNext()`
+    - `E next()`
     
   ### ETC
   - `%s` : string, `%n` : line alignment
