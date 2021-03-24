@@ -516,6 +516,7 @@
     - 一般的に資料型(type)をわかる時は使用しない。
 
   ## Collection FrameWork
+  - collection frameworkのクラスたちは全部toString()の具体化がされている
   - プログラムの実装に必要な資料構造(Data Structure)を具体化しておいたライブラリ
   - java.utilパッケージに具体化されている
   - `Collection` - 単一オブジェクトを管理, 
@@ -548,17 +549,17 @@
     - insert/deleteにかかるコストが少ない
     - 物理的位置/論理的位置異なる
     ### Stack
-    - 重なる
     - LIFO(Last In First Out)
+    - 重なる
     - 一番上、後ろ -> TOP
     - push(), pop()
     - remove(n-1)
     - 線形的
     - peek() : stackから削除しない、参照のみ
     ### Queue
+    - FIFO(First In First Out)
     - 前：front <- 前から取り出す deque
     - 後：rear <- 後ろから入れる  enque
-    - FIFO(First In First Out)
     - remove(0)
     ### Tree
     - binary tree(２進tree)
@@ -579,6 +580,34 @@
     - `Iterator ir = memberArrayList.iterator();`
     - `boolean hashNext()`
     - `E next()`
+    ### TreeSet Class
+    - オブジェクトの整列に使われるクラス
+    - 重複を許さない、descending, ascendingできる
+    - 内部的には2進Binary Search Treeで具体化されている
+    - BSTに資料が保存される時比較して保存する位置を決める
+    - オブジェクトの比較の為ComparableやComparator Interfaceを作らなければならない
+      ### `Comparable`interfaceと`Comparator`interface
+      - 整列対象がなるクラスが作るべきinterface
+      - `Comparable`はcompareTo()メソッドを使いパラメーターとオブジェクト自分(this)を比較
+      - `Coparator`はcompare()メソッドを使い二つのパラメーターを比較
+      - `Coparator`は使う時treesetの生成者にtypeのdefault constructorを呼び出さなければならない -> `treeSet = new TreeSet<Member>(new Member());`
+      - 既に`Comparable`が使われている場合`Comparator`を利用して他の整列方式を定義できる。
+    ### Map interface
+    - key-value pariのオブジェクトを管理する時に必要なメソッドが定義される
+    - keyの重複は不可
+    - 検索の為の資料構造
+    - keyを使い値を保存したり検索、削除する時に使うと便利
+    - 内部的にhash方式で作られている -> `idnex = hash(key)`
+    - keyになるオブジェクトはオブジェクトの唯一性を判断する為にequals()とhashCode()メソッドを再定義する。
+      ### HashMap Class
+      - Map interfaceを具体化したクラスの中一番一般的に使うクラス
+      - HashTableクラスはJava2から提供されたクラスでVectorみたいに同期化を提供する
+      - いろんなメソッドを使いpair資料を早くて気軽に管理できる
+      ### TreeMap Class
+      - keyオブジェクトを整列してkey-value pariを管理するクラス
+      - keyに使用されるクラスに`Comparable`,`Comparator`interfaceを具体化
+      - javaにたくさんのクラス達は既にComparableで具体化されている
+      - 具体化されたクラスをkeyで使う場合具体化する必要なし
     
   ### ETC
   - `%s` : string, `%n` : line alignment

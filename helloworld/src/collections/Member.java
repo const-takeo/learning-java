@@ -1,10 +1,14 @@
 package collections;
 
 import java.util.Collection;
+import java.util.Comparator;
 
-public class Member {
+public class Member implements Comparable<Member>, Comparator<Member> {
     private int memberId;
     private String memberName;
+
+    public Member() {
+    }
 
     public Member(int memberId, String memberName) {
         this.memberId = memberId;
@@ -47,5 +51,22 @@ public class Member {
             return false;
         }
         return false;
+    }
+
+    @Override
+    public int compareTo(Member member) {
+        // + up , ascending
+        // return this.memberId - member.memberId;
+        // - down, descending
+        // return (this.memberId - member.memberId) * -1;
+        // string comparableは基本ascending
+        return this.memberName.compareTo(member.memberName);
+    }
+
+    @Override
+    public int compare(Member member1, Member member2) {
+        // + up , ascending
+        // Comparatorのcompareを呼び出すには
+        return member1.memberId - member2.memberId;
     }
 }
