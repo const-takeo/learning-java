@@ -684,6 +684,27 @@
     - `throws` : 例外を後にする事
                                          
   ## JAVA Input/Output
+  - JAVA Input/Outputでのstreamとは
+    - networkで資料の流れが水と似ているということから由来
+    - 多様なIOに独立的に一貫性あるIOを提供する方式
+    - Byte Stream : 動画、音楽ファイルなどを読み取る、書き出す時に使用
+    - String Stream : byte単位でデータを処理すると文字が化ける2byte単位で処理するようになったstream
+    - base stream : 対象に直接データを読み取る、書き出す機能のstream
+    - support stream : 追加的にサポートする機能をふかえるstream,　短徳に使用不可
+  - Input Stream
+    - 対象からデータを読み取るstram
+    - `System.in.read()`
+    - `Scanner` class
+      - `java.util`のパッケージにあるinput class
+      - 文字だけではなく整数、実数、他のデータ型も読み取れる
+      - いろんな対象からデータを読み取れる
+  - Output Stream
+    - 対象からデータを出力するstream
+  - ### Support Stream
+    - decorater pattern
+    - FilterInputStream and FilterOutputStreamが最上位クラス
+    - constructorのパラメータとして他のstreamを持つ
+  
 
   ### ETC
   - `%s` : string, `%n` : line alignment
