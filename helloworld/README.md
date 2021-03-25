@@ -704,7 +704,24 @@
     - decorater pattern
     - FilterInputStream and FilterOutputStreamが最上位クラス
     - constructorのパラメータとして他のstreamを持つ
-  
+    - InputStreamReader and OutputStreamWriter
+      - byte単位で読み取ったり書き出す資料を文字に返還してくれるサポートstream
+      - `InputStreamReader inputStreamReader = new InputStreamReader(new FileInputStream("output.txt"))`
+    - Buffered Stream
+      - 内部的に8192byte配列を持って読み取ったり書き出したりの機能を提供して速度が早くなる
+    - ### Serialization
+      - インスタンスの状態をそのまま保存(serialization)したり復元(deserialization)する方式
+      - ファイルに書き出すかNetworkを通して転送
+      - `ObjectInputStream, ObjectOutputStream`
+      - `transient String title;` `transient` keywordを付けるとserializationできない
+      - `Serializable`interface
+        - Serializationはインスタンスの内容が外部に輸出される事なのでプログラマが直接意図を表示しなければならない
+        - 具体化コードがない marker interface -> `implements Serializable`
+      - ```
+          try (FileOutputStream fileOutputStream = new FileOutputStream("serial.dat");
+                  ObjectOutputStream objectOutputStream = new ObjectOutputStream(fileOutputStream);)
+        ```
+    - Externalizable
 
   ### ETC
   - `%s` : string, `%n` : line alignment
