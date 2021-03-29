@@ -9,16 +9,15 @@ public class ByteVariables {
 
         // literalの基本型はintなのでLを付けないとエラーになる。
         long num = 12345678900L;
-
         // char
         char ch = 'A';
         System.out.println(ch);
         System.out.println((int) ch);
         ch = 66;
         System.out.println(ch);
-
         // float, double
         double dnum = 3.14;
+        // lowerCaseも可能 -> 3.14f;
         float fNum = 3.14F;
 
         // type inference
