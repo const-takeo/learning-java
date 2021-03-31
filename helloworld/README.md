@@ -82,7 +82,7 @@
 
 - Literal
   - Promgramで使われる全ての数字、値、論理値...
-  - literalに当たる値は特定のメモリ空間に保存されている(constant pool in Heap memory)
+  - literalに当たる値は特定のメモリ空間に保存されている(constant string pool in Heap memory)
   - 必要な場合constant poolから持ってきて使う
   - constant poolに保存される時整数はint型、実数はdoubleで保存されるのが基本ルール
   - よってlong,floatを使う場合識別子を明示しなければならない
