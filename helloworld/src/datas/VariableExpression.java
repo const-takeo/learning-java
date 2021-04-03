@@ -8,5 +8,9 @@ public class VariableExpression {
 
         int level = 20;
         System.out.println(level);
+
+        double pi = 3.14;
+        int test = (int)pi;
+        System.out.println(test);
     }
 }

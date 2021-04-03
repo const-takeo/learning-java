@@ -44,50 +44,50 @@
   - 役割に相応しい名前にする事。
   - 変数の名前は数字で始められない -> 頭文字を数字にしてはならない
 
-- 資料型(data type)
+- ### 資料型(data type)
   - メモリを使うに当たって(変数を宣言する)使用するスペースの大きさと特性(型)に基づいて宣言する。
 
-  - 整数型
+  - ### 整数型
     1. byte (1byte) : 動画や音楽などのファイルを処理する時使用する。
     2. short(2byte) : 主に C / C++ との互換のために使用する。
     3. int  (4byte) : javaでの基本資料型
     4. long (8byte) : 一番大きい資料型、数字の後ろに L or l -> 16L
 
-  - 文字型
+  - ### 文字型
     1. char (2byte) : JavaはUnicode UTF-16を使用する。整数型intに変換して保存する
 
-  - 実数型
+  - ### 実数型
     - 実数はConstant poolに基本doubleで保存される
     - 浮動小数店方式：実数を指数部と仮数部で表現　→　無限の実数を表現する為の方式
     1. float (4byte) : float型を使うときは後ろにF, fを　付ける。
     2. double (8byte) : javaの基本実数型
 
-  - 論理型
+  - ### 論理型
     1. boolean (1byte) : true or false;
 
-  - 資料型なしに変数使用(java 10)
+  - ### 資料型なしに変数使用(java 10)
     - `var`
     - 資料型が必要な利用としては変数を宣言する時使用するメモリの大きさとタイプを区別するために使用
     - 地域変数タイプ推論(Local Variable Type Inference)　→　変数に体入する値を見てcompilerが推論して決める。
 
 
-- 定数(constant)
+- ### 定数(constant)
   - 変化しない値
   - Javaでの定数の宣言 -> finalを使う -> goやjavascriptみたいにconst型がない
   - 定数の場合大文字で宣言するのがコンベンション(convention)
 
-- 文字セット
+- ### 文字セット
   - JavaではUNICODE UTF-16でencoding使用
   - ASCIIは1byteで英文字、数字、特殊文字を表現
 
-- Literal
+- ### リテラル(Literal)
   - Promgramで使われる全ての数字、値、論理値...
   - literalに当たる値は特定のメモリ空間に保存されている(constant string pool in Heap memory)
   - 必要な場合constant poolから持ってきて使う
-  - constant poolに保存される時整数はint型、実数はdoubleで保存されるのが基本ルール
+  - constant poolに保存される時整数はint型(4byte)、実数はdouble(8byte)で保存されるのが基本ルール
   - よってlong,floatを使う場合識別子を明示しなければならない
 
-- 型変換(type conversion)
+- ### 型変換(type conversion)
   - 資料型は各々使うメモリ空間の大きさと方式が違う
   - 黙示的型変換(Implicit Conversion)
     - 小さい値から大きい値に、やや精密度が低いからもっと精密な値に体入される時
@@ -95,7 +95,7 @@
   - 明示的型変換(Explicit Conversion)
     - 黙示的型変換の反対
     - 変換される型を明示する必要がある、
-    - 値の損失があり得る。
+    - 値の損失があり得る。(truncated)
 
 ## Operator(演算子)
   - Operand(被演算子・항) : 演算に使用される値。
@@ -126,11 +126,12 @@
   - 二項演算し
     - 演算の結果がtrue、falseどちらかで変換される。
     - 左被演算子が基準
+    - `int num = 5;`
     - `>` ->  `num>3` : true
-    - `<` ->  `num<3` : true
+    - `<` ->  `num<3` : false
     - `>=` ->  `num>=3` : true
-    - `<=` ->  `num<=3` : true
-    - `==` ->  `num==3` : true
+    - `<=` ->  `num<=3` : false
+    - `==` ->  `num==3` : false
     - `!=` ->  `num!=3` : true
 
   ### 論理演算子
@@ -175,8 +176,9 @@
     - `&`: ビット単位AND 1&1 -> 1 その以外は0
     - `|`: ビット単位OR 0|0 -> 0 その以外は1
     - `^`: ビット単位XOR 二つのビットが違う場合1を返す一緒の時は0
-    - `<<`: 左シフト `a << 2` 変数aを2ビット左にシフトさせる。
-    - `>>`: 右シフト `a >> 2` 変数aを2ビット左にシフトさせる。
+    - `<<`: 左シフト `a << 2` 変数aを2ビット左にシフトさせる。 -> * 2のn乗 -> `num1 = 5,  num1 << 1, print(num1) -> 10`
+    - `>>`: 右シフト `a >> 2` 変数aを2ビット左にシフトさせる。 -> / 2のn乗
+    - `>>>`: 右シフト `a >>> 2` 変数aを2ビット左にシフトさせる shiftして符号関係なしに０で埋める。
 
 ## 制御
   ### 条件分
@@ -738,3 +740,4 @@
   ### ETC
   - `%s` : string, `%n` : line alignment
   - Runnable interface : threadを生成する時使う
+                                                                                
