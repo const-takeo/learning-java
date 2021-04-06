@@ -8,7 +8,6 @@
 - OpenSource
 
 ## データの表現
-<a href="https://github.com/const-takeo/learning-java/blob/main/helloworld/src/data/Dataexpression.java"> * -> </a>
 - bit: 2進数一個の値をセーブできるメモリの大きさ→コンピュータが表現するデータの最小単位
 - byte: 8bit
 - 16進数　→　16で桁が上がる -> 9 A B C D E F 10
@@ -194,8 +193,13 @@
     - 条件が同じ場合同一のラインでかける
       ```
           switch(month)
-                case1 : case3: case5: case7:
-                    day 31
+                case 1 : case 3: case 5: case 7:
+                    day = 31;
+                    break;
+                case 2 :
+                    day = 28;
+                    break;
+                default:
                     break;
       ```
   ### 反復文
