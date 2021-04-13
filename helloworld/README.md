@@ -250,9 +250,9 @@
       - 関数の一種
         - オブジェクトの機能を提供するためにクラスの内部に実現する関数
       - 関数とは？
-        - 一つの機能を実行する一連のコード
-          重複する機能を関数で実現して関数を呼び出して使う。
-      - 関数とスタックメモリ
+        - 一つの機能を実行する一連のコードの集まり
+          重複する機能を関数で具現化して関数を呼び出して使う。
+      - 関数とスタックメモリ(stack memory)
         - 関数が呼び出される時使用されるメモリ - Stack
         - 関数の機能の実行が終わると自動で変換されるメモリ
 
@@ -263,12 +263,14 @@
         - new予約後を使いクラスを生成
         - クラス型　変数名 = new 生成者;
         - `Student studentA = new Student();`
-        - studentA <- 参照変数(reference variable)
+        - `studentA` <- 参照変数(reference variable)
+        - `Student` <- 参照型データ変数(reference data type)
         - Student <- Object Type
       - インスタンスとヒップメモリ(heap memory)
         - クラスがインスタンスに生成された状態
         - 一つのクラスコードからいくつかのインスタンスを生成
-        - インスタンスはheap memory上に生成される。
+        - インスタンスはheap memory上に生成される。(インスタンスは他の所に生成される)
+        - Garabage Collectorが使用しないメモリを回収する
         - 個々のインスタンスは異なるメモリに異なる値を持つ。
         - 参照変数(reference variable)
         - 参照値(reference value)
