@@ -12,5 +12,6 @@ public class StudentTest {
         String name = studentYun.getStudentName();
         studentYun.showStudentInfo();
         System.out.println(name);
+        System.out.println(studentKim.studentName);
     }
 }
