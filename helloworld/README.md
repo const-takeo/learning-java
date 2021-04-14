@@ -301,11 +301,35 @@
       - 一個のファイルの中でpublic classは一つのみ
 
     ### this
-    - 自分のメモリを指す
+    - 自分のメモリ(address)を指す
       - 生成されたインスタンスを自ら指す予約語
       - heapメモリ上に生成されたインスタンスを指す。
     - 生成者で他の生成者を呼び出す
+      - parameterとtypeがあうconstructorを探して使う
+      - ```
+            public Person() {
+            this("No name", 20);
+            }
+
+            public Person(String name, int age) {
+                this.name = name;
+                this.age = age;
+            }
+        ```
     - 自分のアドレスを返す
+    - this前には他のstatementは来ることができない
+      - thisで他の生成者を読んで初期化されてないのに他の変数が先にメモリ上に乗っかることがあり得るので禁止
+    - ```
+        class BirthDay {
+          int year;
+
+          public void setYear(int year //int y){
+            this.year = year;
+            //year = y;
+            //parameterのyearの名前がmember変数の名前と違う時(y)はthisを使わなくても良い.
+          }
+        }
+      ```
 
     ### static変数(予約語)
     - static変数の定義と使用方法

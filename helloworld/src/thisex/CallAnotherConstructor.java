@@ -3,7 +3,7 @@ package thisex;
 class Person {
     String name;
     int age;
-
+    //thisで他の生成者を呼ぶ
     public Person() {
         this("No name", 20);
     }
@@ -12,7 +12,7 @@ class Person {
         this.name = name;
         this.age = age;
     }
-
+    //自分のアドレスを返す
     public Person returnSelf() {
         return this;
     }
