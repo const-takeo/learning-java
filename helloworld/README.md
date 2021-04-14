@@ -293,11 +293,12 @@
                  |
                  - 参照資料型 : `String, Date, Student...`
     - 情報隠匿(いんとく:은닉)（隠す）(information hiding)
-      - private: 接近制御子(access modifier)
+      - ### private: 接近制御子(access modifier)
         - クラスの外部からクラスの内部のメンバ変数やメソッドに接近(access)出来ないようにする。
         - メンバ変数やメソッドを外部から使用できないようにしてエラーを減らすことが出来る
         - 変数に対しては必要の場合get(),set()メソッドを提供
       - 接近制御子に何も無い場合: defalut => 同じパッケージ内ではaccess可能。
+      - 一個のファイルの中でpublic classは一つのみ
 
     ### this
     - 自分のメモリを指す
