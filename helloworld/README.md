@@ -270,7 +270,7 @@
         - クラスがインスタンスに生成された状態
         - 一つのクラスコードからいくつかのインスタンスを生成
         - インスタンスはheap memory上に生成される。(インスタンスは他の所に生成される)
-        - Garabage Collectorが使用しないメモリを回収する
+        - Garbage Collectorが使用しないメモリを回収する
         - 個々のインスタンスは異なるメモリに異なる値を持つ。
         - 参照変数(reference variable)
         - 参照値(reference value)
@@ -392,6 +392,7 @@
     - `arr[0].length` : 0行の列の長さ
 
     ### ArrayListクラス
+    - Listクラスが上位クラス
     - 既存の配列は長さを決めて宣言してから使うので足りない場合他の配列に複製したり面倒になる
     - ArrayListクラスはJavaから提供されるオブジェクト配列が実装されたクラスである
     - 色んなメソッドと属性を使用しオブジェクト型配列を便利に管理できる
@@ -399,16 +400,17 @@
     - よく使われているArrayListのメソッド
       - `add(Type name) : boolean` : 要素一個を配列に追加
       - `size() : int` : 要素の全体個数を返す
-      - `get(int index)` : 配列のidexの位置にある要素の値を返す
-      - `remove(int index)` : 配列のidexの位置にある要素の値を消してその値を返す
+      - `get(int index)` : 配列のindexの位置にある要素の値を返す
+      - `remove(int index)` : 配列のindexの位置にある要素の値を消してその値を返す
       - `isEmpty()` : 配列の空きを確認する
+      - `forEach()`
       - ....
 
   ## 継承と多形成
   - ### 継承(inheritance:상속)
     - クラスを定義するとき既に実現されているクラスを継承されて属性や機能が拡張されるクラスを実現する
     - 継承するクラス：上位クラス,parent class, base class, super class
-    - 継承されるクラス：下位クラス, child class, derived class, sub class
+    - 継承されるクラス：下位クラス, child class, derived class, subclass
     - `class B extends A {}`
     - 上位クラスは下位クラスより一般的な意味を持つ(general)
     - 下位クラスは上位クラスより具体的な意味を持つ(specific)

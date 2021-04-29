@@ -11,7 +11,7 @@ public class StudentMain {
         studentK.addSubject("English", 90);
         studentK.addSubject("Chinese", 80);
 
-        studentK.showInfo();
-        studentY.showInfo();
+        studentK.showStudentInfo();
+        studentY.showStudentInfo();
     }
 }
