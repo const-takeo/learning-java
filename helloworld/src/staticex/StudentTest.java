@@ -8,6 +8,5 @@ public class StudentTest {
         
         Student student2 = new Student();
         System.out.println(Student.getSerialNum());
-        
     }
 }
