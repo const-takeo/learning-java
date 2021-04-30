@@ -408,7 +408,7 @@
 
   ## 継承と多形成
   - ### 継承(inheritance:상속)
-    - クラスを定義するとき既に実現されているクラスを継承されて属性や機能が拡張されるクラスを実現する
+    - 継承とはクラスを定義する時既に具現されているクラスを継承して属性や機能が拡張されるクラスを具現する。
     - 継承するクラス：上位クラス,parent class, base class, super class
     - 継承されるクラス：下位クラス, child class, derived class, subclass
     - `class B extends A {}`
@@ -416,7 +416,10 @@
     - 下位クラスは上位クラスより具体的な意味を持つ(specific)
     - extendsの後ろには単一のクラスだけ使用できる
     - Javaはsingle inheritanceだけを支援する。
-    - is - a, has - a
+    - is - a
+        - 一般ー具体、一般的な継承の関係。
+    - has - a
+        - 単純に他のクラスを持ってきて使う事。
     - private < default < protected < public
     - 接近制御子protectedは継承関係ならクラスが違っても使える
     - 下位クラスが生成されるとき上位クラスが先に生成される。`super()`

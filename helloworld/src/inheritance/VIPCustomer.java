@@ -6,7 +6,7 @@ public class VIPCustomer extends Customer {
 
     public VIPCustomer(int customerID, String customerName, int agentID) {
         super(customerID, customerName);
-        // super() <- precompie段階で自動的に呼び出される。上位のクラスをさす。
+        // super() <- precompile段階で自動的に呼び出される。上位のクラスをさす。
         customerGrade = "VIP";
         bonusRatio = 0.05;
         saleRatio = 0.1;
