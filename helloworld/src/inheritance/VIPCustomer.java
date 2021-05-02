@@ -5,6 +5,8 @@ public class VIPCustomer extends Customer {
     private double saleRatio;
 
     public VIPCustomer(int customerID, String customerName, int agentID) {
+        // default constructorがなく他のコンストラクターがあるとそれが呼び出される。
+        // なのでそのコンストラクターに合わせてパラメーターを指定する必要がある。
         super(customerID, customerName);
         // super() <- precompile段階で自動的に呼び出される。上位のクラスをさす。
         customerGrade = "VIP";

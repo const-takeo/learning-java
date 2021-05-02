@@ -10,9 +10,4 @@ public class GoldCustomer extends Customer {
     public int calcPrice(int price) {
         return 0;
     }
-
-    @Override
-    public String showCustomerInfo() {
-        return "";
-    }
 }
