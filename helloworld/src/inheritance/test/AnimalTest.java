@@ -23,6 +23,10 @@ class Tiger extends Animal {
     public void move() {
         System.out.println("虎が走り出します。");
     }
+
+    public void hunting() {
+        System.out.println("Huntingします。");
+    }
 }
 
 class Eagle extends Animal {
@@ -47,6 +51,10 @@ public class AnimalTest {
             // downcasting
             Human human = (Human) animal;
             human.talk();
+        }
+        if (animal instanceof Tiger) {
+            Tiger tiger = (Tiger) animal;
+            tiger.hunting();
         }
     }
 }
