@@ -16,7 +16,7 @@ public class MannualCar extends Car {
 
     @Override
     public void wiper() {
-        System.out.println("雨が降りワイパーを作動します。");
+        System.out.println("======== 雨が降りワイパーを作動します。");
     }
 
     @Override
