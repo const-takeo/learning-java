@@ -9,6 +9,7 @@ public class SchedulerMain {
         int ch = System.in.read();
         Scheduler scheduler = null;
         if (ch == 'R' || ch == 'r') {
+            //polymorphism
             scheduler = new RoundRobin();
         } else if (ch == 'L' || ch == 'l') {
             scheduler = new LeastJob();
@@ -18,7 +19,6 @@ public class SchedulerMain {
             System.out.println("エラーです");
             return;
         }
-        //polymorphism
         scheduler.getNextCall();
         scheduler.sendCallToAgent();
     }

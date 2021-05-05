@@ -499,18 +499,19 @@
     - finalクラスはこの上もっと継承されない ex) javaのStringクラス
     
   ## JavaでのInterface
-  - 具体化コードがない全てのメソッドが抽象メソッドで成り立つメソッドの集まりクラス
-  - interfaceの中に宣言されたメソッドたちは基本public abstractに自動設定されている →　抽象メソッド
-  - interfaceの中に宣言されたメンバー変数は基本public static finalが自動的に付く　→　定数(constant)
+  - 具現コードが無く全てのメソッドが抽象メソッドで成り立つメソッドの集まりクラス -> interface中の全てのメソッドが抽象メソッドに見なされる
+  - interfaceの中に宣言されたメソッドたちは基本`public abstract`に自動設定されている →　抽象メソッド
+  - interfaceの中に宣言されたメンバー変数は基本`public static final`が自動的に付く　→　定数(constant)
   - Type-implements(type継承)と呼ばれる (interface - implements), 具体化継承(class - extends)
   - interfaceは具体化コードがないため一期に沢山implements出来る
-  - default method: 基本具体化を持っているメソッド,具体化クラスで再定義できる
+  - interfaceはspec!
+  - default method: 基本具体化を持っているメソッド,具体化クラスで再定義できる、
   - static method: インスタンスの生成とは関係なくinterfaceタイプで使用できるメソッド(ex:`Calc.total()`)
-  - pricate method: interfaceを具体化したクラスで使用したり再定義出来ない,interface内部で機能を提供する為に具体化するメソッド。
+  - private method: interfaceを具体化したクラスで使用したり再定義出来ない,interface内部で機能を提供する為に具体化するメソッド。
     ### interfaceと多形成
-    - interfaceは"Client cod"とサービスを提供するオブジェクト間の約束である。
+    - interfaceは"Client code"とサービスを提供するオブジェクト間の約束である。
     - どんなオブジェクトがどんなinterfaceタイプである事はそのinterfaceが提供するメソッドを具体化させたという意味です。
-    - Clientはいどういう風に具体化されたのか関係なくinterfaceの定義だけを見て使用できる。(ex:JDBC)
+    - Clientはどういう風に具体化されたのか関係なくinterfaceの定義だけを見て使用できる。(ex:JDBC)
     - 色んな具体化が必要なinterfaceを設計するに当たってとっても重要な事です
     - 継承されたinterfaceたちが一緒のdefault methodを持っている場合Override出来る
     ### interface継承
