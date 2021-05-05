@@ -4,14 +4,17 @@ public class Customer implements Buy, Cell {
 
     @Override
     public void sell() {
-        // TODO Auto-generated method stub
-        
+        System.out.println("販売");
     }
 
     @Override
     public void buy() {
-        // TODO Auto-generated method stub
-        
+        System.out.println("購買");
     }
-    
+
+    @Override
+    public void order() {
+        System.out.println("Customer Order");
+    }
+
 }
