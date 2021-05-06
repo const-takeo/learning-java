@@ -551,6 +551,7 @@
         - 再定義されたequals()メソッドの値がtrue
         - 同じhashCode()返還値を持つべき
       - 論理的な同一製のためequals()メソッドを再定義したらhashCode()メソッドも再定義して同一の値が帰ってくるようにする
+      - `hashCode()`が既に再定義されていて本当のアドレスを見たいときは`System.identityHashCode()`を使う
     - `clone()`
       - オブジェクトの原本を複製するのに使用するメソッド
       - 原本をおいといて複製本を使う時
@@ -564,6 +565,7 @@
       - 一度生成されたString値(文字列)は不変(immutable)
       - 二つの文字列を連結すると新しいインスタンスが生成される
       - 文字列連結を沢山やるとメモリにgarbageが沢山できる恐れがある。-> StringBuilder, StringBufferを使用
+      - `String.format("著者は%sです、本の名前は%sです", author, name);`
     - StringBuilder, StringBuffer
       - 内部的に可変的なchar[]配列を持っているクラス
       - 文字列を頻繁に繋ぐとか変更する時使うといい
