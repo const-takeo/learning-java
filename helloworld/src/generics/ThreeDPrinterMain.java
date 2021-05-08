@@ -12,5 +12,6 @@ public class ThreeDPrinterMain {
         Plastic plastic = threeDPrinterPlastic.getMaterial();
         System.out.println(plastic.toString());
 
+        threeDPrinterPlastic.printing();
     }
 }

@@ -1,6 +1,6 @@
 package generics;
 
-public class ThreeDPrinter<T> {
+public class ThreeDPrinter<T extends Material> {
     private T material;
 
     public T getMaterial() {
@@ -14,6 +14,10 @@ public class ThreeDPrinter<T> {
     @Override
     public String toString() {
         return material.toString();
+    }
+
+    public void printing() {
+        material.doPrinting();
     }
 
 }

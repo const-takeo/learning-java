@@ -643,12 +643,14 @@
 - 変数の宣言やメソッドのパラメーターを一つの参照資料型ではなく色んな資料型を返せるようにプログラミングする方式
 - 実際に使用される参照資料型への返還はcompilerが検証するので安定的な方式
 - Collection FrameWorkでよく使われている
+- `public class ThreeDPrinter<T>`
+- 制約をかける方法：`public class ThreeDPrinter<T extends Material>`
 
 ### 資料型パラメータ変数 T
 
 - typeの意味でTをよく使う
 - `<T>`で`<>`はダイヤモンド演算子と呼ぶ
-- static keywordにはTに使えない
+- static keywordにはTに使えない -> Tを使う場合はインスタンスが生成してからタイプが決まるから
 - genericで資料型推論(java10から)
   `ArrayList<String> list = new ArrayList<String>();`
   &darr;
