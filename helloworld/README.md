@@ -573,7 +573,7 @@
   ### String Class
   - Stringを宣言する二つの方法
     - `String str1 = new String("abc");` : heapメモリに生成される
-    - `String str2 = "test";` : constant poo領域に生成される
+    - `String str2 = "test";` : constant pool領域に生成される
   - StringClassで文字列連結
     - 一度生成されたString値(文字列)は不変(immutable)
     - 二つの文字列を連結すると新しいインスタンスが生成される
@@ -582,10 +582,25 @@
   - StringBuilder, StringBuffer
     - 内部的に可変的なchar[]配列を持っているクラス
     - 文字列を頻繁に繋ぐとか変更する時使うといい
-    - 毎度新しく生成しずに既存の配列を変更して使うのでgarabageが出でこない
-    - StringBufferはmulti threadプログラミングで同期化(synchronization)を保障する
+    - 毎度新しく生成しずに既存の配列を変更して使うのでgarbageが出でこない
+    - StringBufferはmulti threadプログラミングで同期化(synchronization)を保証する
     - 単一threadを使うプログラムではStringBufferを使うのをお勧め
     - toString()メソッドでStringに返還
+
+  ### Wrapper Class
+  - 基本資料型に対すクラス
+    - boolean Boolean
+    - byte Byte
+    - char Character
+    - short Short
+    - int Integer
+    - long Long
+    - float Float
+    - double Double
+  - AutoBoxingとUnBoxing
+    - Integerはオブジェクトでintは４バイトの基本資料型。
+    - 二つの資料を一緒に演算する時自動的に変換が起こる。
+
   ### Class Class
   - javaの全てのクラスとinterfaceはcompile後classファイルに生成される。
   - classファイルにはオブジェクトの情報(member variable, method, constructor...)が含まれている
@@ -719,7 +734,7 @@
 - keyを使い値を保存したり検索、削除する時に使うと便利
 - 内部的にhash方式で作られている -> `idnex = hash(key)`
 - keyになるオブジェクトはオブジェクトの唯一性を判断する為にequals()とhashCode()メソッドを再定義する。
-  
+
   ### HashMap Class
   - Map interfaceを具体化したクラスの中一番一般的に使うクラス
   - HashTableクラスはJava2から提供されたクラスでVectorみたいに同期化を提供する
