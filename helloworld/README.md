@@ -696,9 +696,13 @@
 - search速度log2n
 - JavaはRedblack Tree
 - in-order(left - 私 - right) -> ascending sort(오름차순)
+- pre-order
+- post-order
 
 ### Hashing
 
+- 速度が速い
+- 算術演算を利用した検索方式
 - 平均時間複雑度 = 資料がN個の時 O(1)
 - `index = hash(key)`
 
